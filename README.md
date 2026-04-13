@@ -1,2 +1,0 @@
-# trabajo-aldair
-tarea academica

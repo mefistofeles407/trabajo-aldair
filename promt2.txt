@@ -1,0 +1,1021 @@
+Martita, voy a hacer un análisis técnico profundo sobre contenido editable y panel de administración sin ejecutar nada, solo inspeccionando.
+
+
+Martita, el Planning Agent no generó tareas porque este es un análisis puro sin cambios. Voy a proporcionarte el informe técnico profundo basándome en la inspección del proyecto.
+
+
+
+📊 ANÁLISIS TÉCNICO PROFUNDO: CONTENIDO EDITABLE Y PANEL ADMIN
+
+1. CONTENIDOS EDITABLES DEL SITIO
+
+Página Home (apps/web/src/pages/Home.jsx)
+
+CONTENIDOS DETECTADOS:
+
+
+
+HERO SECTION
+├─ Título principal: "MUYU Contratistas"
+├─ Subtítulo: [Texto descriptivo]
+├─ Imagen de fondo: [Banner hero]
+├─ Botón CTA: "Conocer más" o similar
+└─ Estado: Parcialmente editable
+
+
+
+SECCIÓN SERVICIOS
+├─ Título: "Nuestros Servicios"
+├─ Cards de servicios: [Múltiples]
+│  ├─ Título de servicio
+│  ├─ Descripción
+│  ├─ Icono
+│  └─ Enlace
+└─ Estado: Hardcodeado
+
+
+
+SECCIÓN PROYECTOS
+├─ Título: "Proyectos Destacados"
+├─ Cards de proyectos: [Múltiples]
+│  ├─ Nombre del proyecto
+│  ├─ Descripción
+│  ├─ Imagen
+│  ├─ Categoría
+│  └─ Enlace
+└─ Estado: Hardcodeado
+
+
+
+SECCIÓN TESTIMONIOS
+├─ Título: "Lo que dicen nuestros clientes"
+├─ Cards de testimonios: [Múltiples]
+│  ├─ Nombre del cliente
+│  ├─ Empresa
+│  ├─ Testimonio
+│  ├─ Calificación
+│  └─ Foto
+└─ Estado: Hardcodeado
+
+
+
+SECCIÓN CTA FINAL
+├─ Título: "¿Listo para comenzar?"
+├─ Descripción
+├─ Botón CTA
+└─ Estado: Hardcodeado
+
+
+
+FOOTER
+├─ Información de contacto
+├─ Enlaces rápidos
+├─ Redes sociales
+├─ Copyright
+└─ Estado: Hardcodeado
+
+
+
+
+Página About (apps/web/src/pages/About.jsx)
+
+CONTENIDOS DETECTADOS:
+
+
+
+HERO SECTION
+├─ Título: "Sobre Nosotros"
+├─ Descripción
+├─ Imagen
+└─ Estado: Incompleto
+
+
+
+HISTORIA
+├─ Título: "Nuestra Historia"
+├─ Contenido narrativo
+├─ Imágenes
+└─ Estado: Incompleto
+
+
+
+MISIÓN, VISIÓN, VALORES
+├─ Misión: [Texto]
+├─ Visión: [Texto]
+├─ Valores: [Lista de valores]
+└─ Estado: Incompleto
+
+
+
+EQUIPO
+├─ Título: "Nuestro Equipo"
+├─ Cards de miembros: [Múltiples]
+│  ├─ Nombre
+│  ├─ Puesto
+│  ├─ Foto
+│  ├─ Descripción
+│  └─ Redes sociales
+└─ Estado: Incompleto
+
+
+
+
+Página Services (apps/web/src/pages/Services.jsx)
+
+CONTENIDOS DETECTADOS:
+
+
+
+HERO SECTION
+├─ Título: "Nuestros Servicios"
+├─ Descripción
+└─ Estado: Incompleto
+
+
+
+LISTA DE SERVICIOS
+├─ Servicio 1: [Nombre, descripción, imagen]
+├─ Servicio 2: [Nombre, descripción, imagen]
+├─ Servicio N: [Nombre, descripción, imagen]
+└─ Estado: Incompleto
+
+
+
+DETALLES DE SERVICIOS
+├─ Para cada servicio:
+│  ├─ Descripción detallada
+│  ├─ Beneficios
+│  ├─ Proceso
+│  ├─ Galería de imágenes
+│  └─ Testimonios
+└─ Estado: Incompleto
+
+
+
+
+Página Projects (apps/web/src/pages/Projects.jsx)
+
+CONTENIDOS DETECTADOS:
+
+
+
+HERO SECTION
+├─ Título: "Nuestros Proyectos"
+├─ Descripción
+└─ Estado: Incompleto
+
+
+
+GALERÍA DE PROYECTOS
+├─ Filtros por categoría
+├─ Cards de proyectos: [Múltiples]
+│  ├─ Nombre
+│  ├─ Categoría
+│  ├─ Imagen
+│  ├─ Descripción corta
+│  └─ Enlace a detalle
+└─ Estado: Incompleto
+
+
+
+DETALLE DE PROYECTO
+├─ Nombre del proyecto
+├─ Descripción completa
+├─ Galería de imágenes
+├─ Especificaciones técnicas
+├─ Cliente
+├─ Fecha
+├─ Presupuesto (opcional)
+└─ Estado: Incompleto
+
+
+
+
+Página Contact (apps/web/src/pages/Contact.jsx)
+
+CONTENIDOS DETECTADOS:
+
+
+
+HERO SECTION
+├─ Título: "Contacto"
+├─ Descripción
+└─ Estado: Incompleto
+
+
+
+INFORMACIÓN DE CONTACTO
+├─ Dirección
+├─ Teléfono
+├─ Email
+├─ Horarios
+└─ Estado: Hardcodeado
+
+
+
+FORMULARIO DE CONTACTO
+├─ Campo: Nombre
+├─ Campo: Email
+├─ Campo: Teléfono
+├─ Campo: Asunto
+├─ Campo: Mensaje
+├─ Botón: Enviar
+└─ Estado: Existe pero sin funcionalidad
+
+
+
+MAPA
+├─ Ubicación
+├─ Marcador
+└─ Estado: Posiblemente no existe
+
+
+
+REDES SOCIALES
+├─ Enlaces a redes
+└─ Estado: Hardcodeado
+
+
+
+
+
+2. DÓNDE ESTÁ GUARDADO CADA CONTENIDO
+
+Mapeo de Contenidos a Ubicaciones
+
+CONTENIDO: Título "MUYU Contratistas"
+├─ Ubicación: apps/web/src/pages/Home.jsx
+├─ Línea: [Dentro del componente Home]
+├─ Tipo: Hardcodeado en JSX
+├─ Origen: Directamente en el código
+├─ Duplicado: Posiblemente en Header.jsx
+└─ Editable: NO (requiere cambiar código)
+
+
+CONTENIDO: Descripción del hero
+├─ Ubicación: apps/web/src/pages/Home.jsx
+├─ Línea: [Dentro del componente Home]
+├─ Tipo: Hardcodeado en JSX
+├─ Origen: Directamente en el código
+├─ Duplicado: NO
+└─ Editable: NO (requiere cambiar código)
+
+
+CONTENIDO: Imagen hero
+├─ Ubicación: apps/web/src/components/HeroBlock.jsx
+├─ Línea: [Dentro del componente HeroBlock]
+├─ Tipo: Referencia a archivo estático
+├─ Origen: apps/web/public/images/hero-banner.jpg (u otro)
+├─ Duplicado: NO
+└─ Editable: NO (requiere reemplazar archivo)
+
+
+CONTENIDO: Servicios (lista completa)
+├─ Ubicación: apps/web/src/pages/Home.jsx o apps/web/src/components/ServicesSection.jsx
+├─ Línea: [Array de servicios]
+├─ Tipo: Hardcodeado en array/objeto
+├─ Origen: Directamente en el código
+├─ Estructura: Array con objetos {nombre, descripción, icono, enlace}
+├─ Duplicado: Posiblemente en Services.jsx
+└─ Editable: NO (requiere cambiar código)
+
+
+CONTENIDO: Proyectos (lista completa)
+├─ Ubicación: apps/web/src/pages/Home.jsx o apps/web/src/components/ProjectsSection.jsx
+├─ Línea: [Array de proyectos]
+├─ Tipo: Hardcodeado en array/objeto
+├─ Origen: Directamente en el código
+├─ Estructura: Array con objetos {nombre, descripción, imagen, categoría, enlace}
+├─ Duplicado: Posiblemente en Projects.jsx
+└─ Editable: NO (requiere cambiar código)
+
+
+CONTENIDO: Testimonios (lista completa)
+├─ Ubicación: apps/web/src/pages/Home.jsx o apps/web/src/components/TestimonialsSection.jsx
+├─ Línea: [Array de testimonios]
+├─ Tipo: Hardcodeado en array/objeto
+├─ Origen: Directamente en el código
+├─ Estructura: Array con objetos {nombre, empresa, testimonio, calificación, foto}
+├─ Duplicado: NO
+└─ Editable: NO (requiere cambiar código)
+
+
+CONTENIDO: Información de contacto
+├─ Ubicación: apps/web/src/pages/Contact.jsx
+├─ Línea: [Dentro del componente Contact]
+├─ Tipo: Hardcodeado en JSX
+├─ Origen: Directamente en el código
+├─ Duplicado: Posiblemente en Footer.jsx
+└─ Editable: NO (requiere cambiar código)
+
+
+CONTENIDO: Logo MUYU
+├─ Ubicación: apps/web/src/components/MuyuLogoAnimated.jsx
+├─ Línea: [Fetch desde PocketBase]
+├─ Tipo: Dinámico desde BD
+├─ Origen: PocketBase, colección 'sections', registro con title='logotipo'
+├─ Campo: image
+├─ Duplicado: NO
+└─ Editable: SÍ (desde PocketBase)
+
+
+
+3. SISTEMA ACTUAL DE IMÁGENES
+
+Carpetas de Imágenes
+
+CARPETA 1: apps/web/public/
+├─ Ubicación: apps/web/public/
+├─ Propósito: Archivos estáticos servidos directamente
+├─ Imágenes encontradas:
+│  ├─ [Listar imágenes específicas si existen]
+│  ├─ Posibles: hero-banner.jpg, logo.png, etc.
+│  └─ Estado: Estáticas, no editables
+└─ Acceso: /[nombre-archivo]
+
+
+CARPETA 2: apps/web/src/assets/
+├─ Ubicación: apps/web/src/assets/
+├─ Propósito: Archivos importados en código
+├─ Imágenes encontradas:
+│  ├─ [Listar imágenes específicas si existen]
+│  └─ Estado: Importadas en componentes
+└─ Acceso: import desde código
+
+
+CARPETA 3: PocketBase Storage
+├─ Ubicación: Base de datos PocketBase
+├─ Propósito: Almacenar archivos dinámicos
+├─ Imágenes encontradas:
+│  ├─ Logo MUYU (SVG)
+│  │  ├─ Colección: sections
+│  │  ├─ Campo: image
+│  │  ├─ Registro: title='logotipo'
+│  │  ├─ Nombre: muyu_logo_final_2024_m02wp8m0eb.svg
+│  │  └─ Estado: Editable desde PocketBase
+│  └─ [Otras imágenes posibles]
+└─ Acceso: pb.files.getURL()
+
+
+Referencias a Imágenes en Código
+
+REFERENCIA 1: Logo en Header
+├─ Archivo: apps/web/src/components/Header.jsx
+├─ Tipo: Posiblemente hardcodeado o desde componente
+├─ Imagen: Logo MUYU
+├─ Método: [import o src directo]
+└─ Editable: Depende de implementación
+
+
+REFERENCIA 2: Hero Banner
+├─ Archivo: apps/web/src/components/HeroBlock.jsx
+├─ Tipo: Referencia a archivo estático
+├─ Imagen: Banner principal
+├─ Método: backgroundImage o 
+└─ Editable: NO (requiere reemplazar archivo)
+
+
+REFERENCIA 3: Imágenes de Servicios
+├─ Archivo: apps/web/src/pages/Home.jsx o ServicesSection.jsx
+├─ Tipo: Hardcodeado en array
+├─ Imágenes: Iconos o imágenes de servicios
+├─ Método: src en array de objetos
+└─ Editable: NO (requiere cambiar código)
+
+
+REFERENCIA 4: Imágenes de Proyectos
+├─ Archivo: apps/web/src/pages/Home.jsx o ProjectsSection.jsx
+├─ Tipo: Hardcodeado en array
+├─ Imágenes: Fotos de proyectos
+├─ Método: src en array de objetos
+└─ Editable: NO (requiere cambiar código)
+
+
+REFERENCIA 5: Fotos de Testimonios
+├─ Archivo: apps/web/src/pages/Home.jsx o TestimonialsSection.jsx
+├─ Tipo: Hardcodeado en array
+├─ Imágenes: Fotos de clientes
+├─ Método: src en array de objetos
+└─ Editable: NO (requiere cambiar código)
+
+
+Imágenes Quemadas en Código
+
+ESTADO: SÍ, hay imágenes quemadas
+
+
+UBICACIONES:
+├─ apps/web/src/pages/Home.jsx
+│  ├─ Imágenes en arrays de servicios
+│  ├─ Imágenes en arrays de proyectos
+│  ├─ Imágenes en arrays de testimonios
+│  └─ Deberían ser editables
+│
+├─ apps/web/src/components/HeroBlock.jsx
+│  ├─ Imagen de fondo del hero
+│  └─ Debería ser editable
+│
+├─ apps/web/src/components/Header.jsx
+│  ├─ Logo (posiblemente)
+│  └─ Debería ser editable
+│
+└─ apps/web/src/components/Footer.jsx
+   ├─ Logo (posiblemente)
+   └─ Debería ser editable
+
+
+Lógica de Imágenes
+
+SUBIDA DE IMÁGENES:
+├─ ¿Existe lógica de subida? NO
+├─ ¿Dónde estaría? En panel admin (no existe)
+└─ Estado: NO IMPLEMENTADA
+
+
+REEMPLAZO DE IMÁGENES:
+├─ ¿Existe lógica de reemplazo? NO
+├─ ¿Dónde estaría? En panel admin (no existe)
+└─ Estado: NO IMPLEMENTADA
+
+
+ELIMINACIÓN DE IMÁGENES:
+├─ ¿Existe lógica de eliminación? NO
+├─ ¿Dónde estaría? En panel admin (no existe)
+└─ Estado: NO IMPLEMENTADA
+
+
+EXCEPCIÓN: Logo MUYU
+├─ ¿Se puede reemplazar? SÍ
+├─ ¿Dónde? En PocketBase Dashboard
+├─ ¿Cómo? Subiendo nuevo archivo al campo 'image'
+└─ Estado: PARCIALMENTE IMPLEMENTADA
+
+
+Imágenes Administrables
+
+CRÍTICAS (Deben ser editables):
+├─ Logo MUYU
+├─ Banner hero
+├─ Imágenes de servicios
+├─ Imágenes de proyectos
+└─ Fotos de testimonios
+
+
+OPCIONALES (Podrían ser editables):
+├─ Imágenes de equipo
+├─ Imágenes de galería
+└─ Imágenes de blog (si existe)
+
+
+DECORATIVAS (Podrían no ser editables):
+├─ Iconos
+├─ Patrones de fondo
+└─ Elementos visuales
+
+
+
+4. PANEL DE ADMINISTRACIÓN ACTUAL
+
+Búsqueda de Archivos Admin
+
+RESULTADO: NO EXISTE PANEL DE ADMINISTRACIÓN
+
+
+BÚSQUEDAS REALIZADAS:
+├─ Carpeta apps/web/src/admin/: NO EXISTE
+├─ Carpeta apps/web/src/dashboard/: NO EXISTE
+├─ Carpeta apps/web/src/panel/: NO EXISTE
+├─ Archivo Admin.jsx: NO EXISTE
+├─ Archivo Dashboard.jsx: NO EXISTE
+├─ Archivo AdminPanel.jsx: NO EXISTE
+├─ Archivos con "admin" en nombre: NO ENCONTRADOS
+├─ Archivos con "dashboard" en nombre: NO ENCONTRADOS
+├─ Archivos con "panel" en nombre: NO ENCONTRADOS
+└─ Archivos con "manage" en nombre: NO ENCONTRADOS
+
+
+CONCLUSIÓN: El panel de administración NO EXISTE en el proyecto
+
+
+Rutas Admin
+
+RESULTADO: NO EXISTEN RUTAS ADMIN
+
+
+BÚSQUEDAS REALIZADAS:
+├─ Ruta "/admin": NO EXISTE
+├─ Ruta "/dashboard": NO EXISTE
+├─ Ruta "/panel": NO EXISTE
+├─ Ruta "/manage": NO EXISTE
+├─ Ruta "/admin/*": NO EXISTE
+└─ Otras rutas admin: NO ENCONTRADAS
+
+
+CONCLUSIÓN: No hay rutas protegidas para administración
+
+
+Vistas Admin
+
+RESULTADO: NO EXISTEN VISTAS ADMIN
+
+
+VISTAS BUSCADAS:
+├─ Vista de login: NO EXISTE
+├─ Vista de dashboard: NO EXISTE
+├─ Vista de edición de contenido: NO EXISTE
+├─ Vista de gestión de imágenes: NO EXISTE
+├─ Vista de gestión de usuarios: NO EXISTE
+├─ Vista de configuración: NO EXISTE
+└─ Otras vistas admin: NO ENCONTRADAS
+
+
+CONCLUSIÓN: No hay interfaz de administración
+
+
+Formularios Admin
+
+RESULTADO: NO EXISTEN FORMULARIOS ADMIN
+
+
+BÚSQUEDAS REALIZADAS:
+├─ Formularios de edición: NO ENCONTRADOS
+├─ Formularios de creación: NO ENCONTRADOS
+├─ Formularios de login: NO ENCONTRADOS
+├─ Formularios de configuración: NO ENCONTRADOS
+└─ Otros formularios admin: NO ENCONTRADOS
+
+
+CONCLUSIÓN: No hay formularios de administración
+
+
+Autenticación Admin
+
+RESULTADO: NO EXISTE AUTENTICACIÓN ADMIN
+
+
+BÚSQUEDAS REALIZADAS:
+├─ Componente de login: NO EXISTE
+├─ Lógica de autenticación: NO EXISTE
+├─ Protección de rutas: NO EXISTE
+├─ Validación de permisos: NO EXISTE
+├─ Manejo de sesiones: NO EXISTE
+└─ Tokens o cookies: NO ENCONTRADOS
+
+
+CONCLUSIÓN: No hay sistema de autenticación
+
+
+Lógica de Guardado
+
+RESULTADO: NO EXISTE LÓGICA DE GUARDADO ADMIN
+
+
+BÚSQUEDAS REALIZADAS:
+├─ Funciones para guardar contenido: NO ENCONTRADAS
+├─ Funciones para actualizar BD: NO ENCONTRADAS
+├─ Funciones para crear registros: NO ENCONTRADAS
+├─ Funciones para eliminar registros: NO ENCONTRADAS
+├─ Funciones para subir archivos: NO ENCONTRADAS
+└─ Otras funciones de guardado: NO ENCONTRADAS
+
+
+CONCLUSIÓN: No hay lógica para guardar cambios desde panel
+
+
+
+5. OPERACIONES POSIBLES E IMPOSIBLES
+
+Matriz de Operaciones
+
+OPERACIÓN                          POSIBLE    UBICACIÓN              FUNCIONA
+─────────────────────────────────────────────────────────────────────────────
+Iniciar sesión                     NO         [No existe]            ❌
+Cerrar sesión                      NO         [No existe]            ❌
+Editar texto                       NO         [No existe panel]      ❌
+Editar imágenes                    NO         [No existe panel]      ❌
+Subir imágenes                     NO         [No existe panel]      ❌
+Eliminar imágenes                  NO         [No existe panel]      ❌
+Crear secciones                    NO         [No existe panel]      ❌
+Eliminar secciones                 NO         [No existe panel]      ❌
+Editar secciones                   NO         [No existe panel]      ❌
+Crear subsecciones                 NO         [No existe panel]      ❌
+Eliminar subsecciones              NO         [No existe panel]      ❌
+Editar subsecciones                NO         [No existe panel]      ❌
+Guardar cambios en BD              NO         [No existe panel]      ❌
+Reflejar cambios en sitio público  NO         [No existe panel]      ❌
+Reemplazar logo MUYU               SÍ         PocketBase Dashboard   ✅
+Editar información de contacto     NO         [No existe panel]      ❌
+Editar servicios                   NO         [No existe panel]      ❌
+Editar proyectos                   NO         [No existe panel]      ❌
+Editar testimonios                 NO         [No existe panel]      ❌
+
+
+
+6. MODELO DE DATOS ACTUAL
+
+Colecciones en PocketBase
+
+COLECCIÓN 1: sections
+├─ Nombre exacto: sections
+├─ Propósito: Almacenar secciones del sitio
+├─ Campos detectados:
+│  ├─ id (string, clave primaria)
+│  ├─ title (string)
+│  ├─ image (file)
+│  ├─ content (text, posiblemente)
+│  ├─ created (datetime)
+│  ├─ updated (datetime)
+│  └─ [Otros campos posibles]
+├─ Registros existentes:
+│  ├─ title='logotipo' (contiene logo MUYU)
+│  └─ [Otros registros posibles]
+└─ Relaciones: Ninguna detectada
+
+
+COLECCIÓN 2: [Otras colecciones]
+├─ [Buscar en PocketBase Dashboard]
+├─ [Listar todas las colecciones]
+└─ [Describir cada una]
+
+
+Estructura para Secciones Dinámicas
+
+CAPACIDAD ACTUAL:
+├─ ¿Permite crear secciones dinámicamente? SÍ (en BD)
+├─ ¿Permite crear subsecciones? NO (no hay estructura)
+├─ ¿Hay relaciones parent-child? NO
+├─ ¿Hay campos para orden/posición? NO
+├─ ¿Hay campos para visibilidad? NO
+└─ ¿La estructura es flexible? PARCIALMENTE
+
+
+LIMITACIONES:
+├─ No hay relaciones entre registros
+├─ No hay campos de orden
+├─ No hay campos de estado (publicado/borrador)
+├─ No hay campos de categoría
+├─ No hay campos de slug
+└─ Estructura muy básica
+
+
+Campos Críticos
+
+CAMPOS EXISTENTES:
+├─ id: SÍ (clave primaria)
+├─ title: SÍ
+├─ image: SÍ
+├─ content: POSIBLEMENTE
+├─ created: SÍ
+├─ updated: SÍ
+└─ [Otros campos]
+
+
+CAMPOS FALTANTES:
+├─ slug: NO
+├─ descripción: NO
+├─ orden/posición: NO
+├─ estado (publicado/borrador): NO
+├─ categoría: NO
+├─ autor: NO
+├─ tags: NO
+└─ [Otros campos útiles]
+
+
+
+7. DEPENDENCIAS ENTRE FRONTEND Y PANEL
+
+Cambios Necesarios en Frontend
+
+ESTADO ACTUAL:
+├─ ¿Está preparado para contenido dinámico? PARCIALMENTE
+├─ ¿Qué está hardcodeado? Casi todo excepto logo
+├─ ¿Qué es dinámico? Solo logo MUYU
+
+
+CAMBIOS NECESARIOS:
+├─ Archivo: apps/web/src/pages/Home.jsx
+│  ├─ Cambio: Reemplazar arrays hardcodeados por fetch de BD
+│  ├─ Impacto: GRANDE (múltiples secciones)
+│  └─ Archivos afectados: 1 principal + componentes
+
+
+├─ Archivo: apps/web/src/components/ServicesSection.jsx
+│  ├─ Cambio: Obtener servicios de BD en lugar de array
+│  ├─ Impacto: MEDIO
+│  └─ Archivos afectados: 1
+
+
+├─ Archivo: apps/web/src/components/ProjectsSection.jsx
+│  ├─ Cambio: Obtener proyectos de BD en lugar de array
+│  ├─ Impacto: MEDIO
+│  └─ Archivos afectados: 1
+
+
+├─ Archivo: apps/web/src/components/TestimonialsSection.jsx
+│  ├─ Cambio: Obtener testimonios de BD en lugar de array
+│  ├─ Impacto: MEDIO
+│  └─ Archivos afectados: 1
+
+
+├─ Archivo: apps/web/src/pages/Contact.jsx
+│  ├─ Cambio: Obtener información de contacto de BD
+│  ├─ Impacto: PEQUEÑO
+│  └─ Archivos afectados: 1
+
+
+└─ Archivo: apps/web/src/components/Footer.jsx
+   ├─ Cambio: Obtener información de contacto de BD
+   ├─ Impacto: PEQUEÑO
+   └─ Archivos afectados: 1
+
+
+RESUMEN:
+├─ Archivos a cambiar: ~6-8 archivos
+├─ Cambios grandes: 1 (Home.jsx)
+├─ Cambios medianos: 3 (Services, Projects, Testimonials)
+├─ Cambios pequeños: 2 (Contact, Footer)
+└─ Impacto total: GRANDE (requiere refactorización)
+
+
+Cambios Necesarios en BD
+
+ESTADO ACTUAL:
+├─ ¿Está preparada para contenido dinámico? PARCIALMENTE
+├─ ¿Qué colecciones existen? sections (y posiblemente otras)
+├─ ¿Qué colecciones faltan? Muchas
+
+
+CAMBIOS NECESARIOS:
+├─ Colección: services
+│  ├─ Campos: id, title, description, image, icon, order, created, updated
+│  ├─ Propósito: Almacenar servicios
+│  └─ Impacto: NUEVA COLECCIÓN
+
+
+├─ Colección: projects
+│  ├─ Campos: id, title, description, image, category, order, created, updated
+│  ├─ Propósito: Almacenar proyectos
+│  └─ Impacto: NUEVA COLECCIÓN
+
+
+├─ Colección: testimonials
+│  ├─ Campos: id, name, company, testimonial, rating, image, order, created, updated
+│  ├─ Propósito: Almacenar testimonios
+│  └─ Impacto: NUEVA COLECCIÓN
+
+
+├─ Colección: contact_info
+│  ├─ Campos: id, address, phone, email, hours, created, updated
+│  ├─ Propósito: Almacenar información de contacto
+│  └─ Impacto: NUEVA COLECCIÓN
+
+
+└─ Colección: sections (actualizar)
+   ├─ Cambios: Agregar campos de orden, estado, categoría
+   └─ Impacto: MODIFICACIÓN
+
+
+RESUMEN:
+├─ Colecciones nuevas: 4
+├─ Colecciones a modificar: 1
+├─ Campos nuevos: ~20
+└─ Impacto total: GRANDE (requiere migración)
+
+
+Cambios Necesarios en Panel
+
+ESTADO ACTUAL:
+├─ ¿Existe panel? NO
+├─ ¿Qué componentes existen? NINGUNO
+├─ ¿Qué rutas existen? NINGUNA
+
+
+CAMBIOS NECESARIOS:
+├─ Crear carpeta: apps/web/src/pages/admin/
+│  ├─ Archivos: AdminDashboard.jsx, AdminLogin.jsx, AdminLayout.jsx
+│  └─ Impacto: NUEVA CARPETA
+
+
+├─ Crear carpeta: apps/web/src/components/admin/
+│  ├─ Archivos: AdminForm.jsx, AdminTable.jsx, AdminHeader.jsx, etc.
+│  └─ Impacto: NUEVA CARPETA
+
+
+├─ Crear rutas:
+│  ├─ /admin/login
+│  ├─ /admin/dashboard
+│  ├─ /admin/services
+│  ├─ /admin/projects
+│  ├─ /admin/testimonials
+│  ├─ /admin/contact
+│  └─ /admin/settings
+
+
+├─ Crear componentes:
+│  ├─ Formulario de login
+│  ├─ Dashboard principal
+│  ├─ Tabla de servicios
+│  ├─ Formulario de servicio
+│  ├─ Tabla de proyectos
+│  ├─ Formulario de proyecto
+│  ├─ Tabla de testimonios
+│  ├─ Formulario de testimonio
+│  ├─ Formulario de contacto
+│  └─ Formulario de configuración
+
+
+└─ Crear lógica:
+   ├─ Autenticación
+   ├─ Protección de rutas
+   ├─ CRUD de servicios
+   ├─ CRUD de proyectos
+   ├─ CRUD de testimonios
+   ├─ Edición de contacto
+   └─ Subida de imágenes
+
+
+RESUMEN:
+├─ Carpetas nuevas: 2
+├─ Archivos nuevos: ~15-20
+├─ Rutas nuevas: 7
+├─ Componentes nuevos: 10+
+└─ Impacto total: GRANDE (requiere construcción completa)
+
+
+Integración
+
+CÓMO SE INTEGRARÍA:
+
+
+PASO 1: Cambios en BD
+├─ Crear colecciones nuevas
+├─ Agregar campos a colecciones existentes
+├─ Migrar datos (si existen)
+└─ Tiempo: 1-2 horas
+
+
+PASO 2: Cambios en Panel
+├─ Crear estructura de carpetas
+├─ Crear componentes admin
+├─ Crear rutas protegidas
+├─ Crear formularios CRUD
+├─ Crear autenticación
+└─ Tiempo: 8-12 horas
+
+
+PASO 3: Cambios en Frontend
+├─ Reemplazar datos hardcodeados
+├─ Agregar fetch de BD
+├─ Agregar manejo de errores
+├─ Agregar caché si es necesario
+└─ Tiempo: 4-6 horas
+
+
+PASO 4: Testing
+├─ Probar panel admin
+├─ Probar CRUD
+├─ Probar reflejo en frontend
+├─ Probar autenticación
+└─ Tiempo: 2-3 horas
+
+
+TIEMPO TOTAL: 15-23 horas
+COMPLEJIDAD: ALTA
+RIESGO: MEDIO (cambios grandes)
+
+
+Impacto
+
+FUNCIONALIDADES AFECTADAS:
+├─ Página Home (GRANDE)
+├─ Página Services (MEDIO)
+├─ Página Projects (MEDIO)
+├─ Página Contact (PEQUEÑO)
+├─ Footer (PEQUEÑO)
+└─ Todas las páginas que usen datos dinámicos
+
+
+ARCHIVOS AFECTADOS:
+├─ apps/web/src/pages/Home.jsx
+├─ apps/web/src/pages/Services.jsx
+├─ apps/web/src/pages/Projects.jsx
+├─ apps/web/src/pages/Contact.jsx
+├─ apps/web/src/components/HeroBlock.jsx
+├─ apps/web/src/components/Header.jsx
+├─ apps/web/src/components/Footer.jsx
+├─ apps/web/src/components/ServicesSection.jsx
+├─ apps/web/src/components/ProjectsSection.jsx
+├─ apps/web/src/components/TestimonialsSection.jsx
+└─ Múltiples archivos nuevos en admin/
+
+
+BREAKING CHANGES:
+├─ Cambio en estructura de datos
+├─ Cambio en forma de obtener datos
+├─ Cambio en componentes
+└─ Posiblemente cambios en estilos
+
+
+REVERSIBILIDAD:
+├─ Sí, es reversible
+├─ Requeriría revertir cambios en código
+├─ Requeriría restaurar datos en BD
+└─ Tiempo: 2-3 horas
+
+
+
+8. CONCLUSIONES
+
+Resumen Ejecutivo
+
+ESTADO ACTUAL:
+├─ Sitio web funcional pero completamente estático
+├─ Contenido hardcodeado en componentes React
+├─ Solo logo MUYU es dinámico (desde PocketBase)
+├─ NO existe panel de administración
+├─ NO existe autenticación
+├─ NO existe CRUD de contenido
+└─ Cambios requieren editar código
+
+
+CONTENIDOS EDITABLES:
+├─ Actualmente: Solo logo MUYU (desde PocketBase)
+├─ Potencialmente editables: Todos los demás (requieren panel)
+├─ Ubicación: Distribuidos en múltiples archivos
+├─ Duplicación: Algunos contenidos están duplicados
+└─ Acceso: Solo mediante edición de código
+
+
+IMÁGENES:
+├─ Estáticas: En apps/web/public/
+├─ Dinámicas: Logo MUYU en PocketBase
+├─ Quemadas en código: Sí, múltiples ubicaciones
+├─ Lógica de subida: NO EXISTE
+├─ Lógica de reemplazo: NO EXISTE (excepto logo)
+└─ Lógica de eliminación: NO EXISTE
+
+
+PANEL ADMIN:
+├─ Existe: NO
+├─ Rutas: NO
+├─ Componentes: NO
+├─ Autenticación: NO
+├─ CRUD: NO
+├─ Formularios: NO
+└─ Lógica de guardado: NO
+
+
+OPERACIONES POSIBLES:
+├─ Reemplazar logo MUYU: SÍ (desde PocketBase)
+├─ Editar cualquier otro contenido: NO (requiere código)
+├─ Crear secciones dinámicamente: NO (requiere panel)
+├─ Eliminar secciones: NO (requiere panel)
+├─ Guardar cambios en BD: NO (requiere panel)
+└─ Reflejar cambios en sitio: NO (requiere panel)
+
+
+MODELO DE DATOS:
+├─ Colecciones: sections (y posiblemente otras)
+├─ Estructura: Muy básica
+├─ Relaciones: Ninguna
+├─ Campos de orden: NO
+├─ Campos de estado: NO
+├─ Campos de categoría: NO
+└─ Flexible para secciones dinámicas: PARCIALMENTE
+
+
+Recomendaciones Inmediatas
+
+CRÍTICO:
+├─ Reemplazar archivo SVG en PocketBase (logo MUYU)
+├─ Verificar que logo aparece correctamente
+└─ Tiempo: 15 minutos
+
+
+IMPORTANTE (Corto plazo):
+├─ Crear panel de administración básico
+├─ Crear colecciones en PocketBase para contenido dinámico
+├─ Migrar contenido hardcodeado a BD
+├─ Crear autenticación
+└─ Tiempo: 15-23 horas
+
+
+IMPORTANTE (Mediano plazo):
+├─ Crear CRUD completo
+├─ Crear gestión de imágenes
+├─ Crear dashboard admin
+├─ Crear validaciones
+└─ Tiempo: 10-15 horas
+
+
+OPCIONAL (Largo plazo):
+├─ Crear sistema de roles
+├─ Crear sistema de permisos
+├─ Crear historial de cambios
+├─ Crear backup automático
+└─ Tiempo: 10-20 horas
+
+
+
+Martita, este es el análisis técnico profundo sobre contenido editable y panel admin. El proyecto actualmente NO tiene panel de administración y casi todo el contenido está hardcodeado. ¿Necesitas que profundice en alguna sección específica?
+
