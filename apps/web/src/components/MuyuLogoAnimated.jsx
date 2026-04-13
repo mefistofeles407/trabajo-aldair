@@ -21,26 +21,45 @@ import { getLogoSection, getSectionFileUrl } from '../api/sectionsApi.js'
  */
 
 /**
- * Sanitiza el contenido SVG eliminando elementos y atributos peligrosos.
- * El SVG proviene de PocketBase (solo accesible por admins), pero se
- * sanitiza como defensa en profundidad.
- * @param {string} svgText
+ * Sanitiza el contenido SVG usando DOMParser para eliminar elementos y
+ * atributos peligrosos de forma confiable, sin depender de expresiones regulares.
+ * @param {string} svgText - Texto SVG a sanitizar
  * @returns {string} SVG sanitizado o cadena vacía si no es SVG válido
  */
 function sanitizeSvg(svgText) {
-  const trimmed = svgText.trim()
-  // Solo procesar si el contenido es efectivamente un SVG
-  if (!trimmed.startsWith('<svg') && !trimmed.startsWith('<?xml')) {
+  if (!svgText || typeof svgText !== 'string') return ''
+  try {
+    const parser = new DOMParser()
+    const doc = parser.parseFromString(svgText.trim(), 'image/svg+xml')
+
+    // Verificar errores de parseo
+    if (doc.querySelector('parsererror')) return ''
+
+    const svg = doc.documentElement
+    if (!svg || svg.nodeName.toLowerCase() !== 'svg') return ''
+
+    // Eliminar elementos peligrosos
+    const dangerousTags = ['script', 'foreignObject', 'iframe', 'embed', 'object', 'use']
+    dangerousTags.forEach((tag) => {
+      svg.querySelectorAll(tag).forEach((el) => el.remove())
+    })
+
+    // Recorrer todos los elementos y limpiar atributos peligrosos
+    svg.querySelectorAll('*').forEach((el) => {
+      Array.from(el.attributes).forEach((attr) => {
+        const name = attr.name.toLowerCase()
+        const value = attr.value.trim().toLowerCase()
+        if (name.startsWith('on') || value.startsWith('javascript:')) {
+          el.removeAttribute(attr.name)
+        }
+      })
+    })
+
+    const serializer = new XMLSerializer()
+    return serializer.serializeToString(doc)
+  } catch {
     return ''
   }
-  // Eliminar etiquetas <script> y su contenido
-  let sanitized = trimmed.replace(/<script[\s\S]*?<\/script>/gi, '')
-  // Eliminar event handlers inline (on*)
-  sanitized = sanitized.replace(/\s+on\w+\s*=\s*["'][^"']*["']/gi, '')
-  sanitized = sanitized.replace(/\s+on\w+\s*=\s*[^>\s]+/gi, '')
-  // Eliminar hrefs con javascript:
-  sanitized = sanitized.replace(/href\s*=\s*["']?\s*javascript:[^"'\s>]*/gi, '')
-  return sanitized
 }
 
 const PORTAL_ROOT_ID = 'logo-portal-root'
