@@ -49,7 +49,10 @@ function sanitizeSvg(svgText) {
       Array.from(el.attributes).forEach((attr) => {
         const name = attr.name.toLowerCase()
         const value = attr.value.trim().toLowerCase()
-        if (name.startsWith('on') || value.startsWith('javascript:')) {
+        // Remove event handlers and dangerous URL schemes
+        const dangerousSchemes = ['javascript:', 'data:', 'vbscript:']
+        const hasDangerousScheme = dangerousSchemes.some((s) => value.startsWith(s))
+        if (name.startsWith('on') || hasDangerousScheme) {
           el.removeAttribute(attr.name)
         }
       })

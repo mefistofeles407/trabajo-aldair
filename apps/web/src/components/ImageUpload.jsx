@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Upload, X, Image as ImageIcon } from 'lucide-react'
 import { validateImageFile, createPreviewUrl } from '../utils/imageUpload.js'
 
@@ -63,6 +63,18 @@ export default function ImageUpload({
   }
 
   const displayUrl = sanitizeImageUrl(preview || currentImageUrl)
+  const imgRef = useRef(null)
+
+  // Set img src imperatively after URL validation to ensure the sanitized
+  // value is what reaches the DOM, avoiding inline prop taint-flow.
+  useEffect(() => {
+    if (!imgRef.current) return
+    if (displayUrl) {
+      imgRef.current.setAttribute('src', displayUrl)
+    } else {
+      imgRef.current.removeAttribute('src')
+    }
+  }, [displayUrl])
 
   return (
     <div className="space-y-2">
@@ -73,7 +85,7 @@ export default function ImageUpload({
       {displayUrl ? (
         <div className="relative inline-block">
           <img
-            src={displayUrl}
+            ref={imgRef}
             alt="Vista previa"
             className="w-48 h-32 object-cover rounded-lg border border-gray-300"
           />
