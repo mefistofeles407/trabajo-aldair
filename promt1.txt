@@ -1,0 +1,68 @@
+Necesito que analices este proyecto web completo y me devuelvas un informe técnico exacto, sin asumir nada y sin inventar información.
+
+Quiero que inspecciones el proyecto real actual y me respondas de forma estructurada y específica con base en los archivos existentes.
+
+Necesito que me indiques:
+
+1. Tecnologías usadas en el proyecto
+- lenguaje o lenguajes usados
+- si usa HTML, CSS, JavaScript, PHP, MySQL u otros
+- librerías, frameworks o plugins detectados
+- si el sitio es totalmente estático o si ya tiene partes dinámicas
+
+2. Estructura real del proyecto
+- lista de archivos principales
+- lista de carpetas principales
+- cuál es el archivo de entrada principal
+- qué archivos parecen corresponder al frontend público
+- qué archivos parecen corresponder al panel de administración, si existen
+- qué archivos parecen conectarse a base de datos, si existen
+
+3. Páginas o secciones detectadas del sitio web
+- inicio
+- nosotros
+- servicios
+- proyectos
+- contacto
+- cualquier otra sección encontrada
+- indicar qué archivo renderiza cada sección
+
+4. Estado actual del proyecto
+- qué partes ya funcionan claramente
+- qué partes están incompletas
+- qué partes parecen provisionales
+- si ya existe login, panel, CRUD, carga de imágenes, edición de textos o algo parecido
+
+5. Base de datos
+- si el proyecto ya tiene conexión a base de datos
+- qué archivos contienen la conexión
+- qué tablas parecen existir o ser usadas
+- qué datos del sitio dependen de base de datos y cuáles están fijos en código
+
+6. Sistema de autenticación
+- si existe login
+- si existe sesión de usuario
+- si existe un rol admin o usuario único
+- qué archivos manejan eso
+
+7. Gestión de contenido
+- cómo se administran actualmente los textos
+- cómo se administran actualmente las imágenes
+- si actualmente todo está hardcodeado
+- si ya existe alguna forma de editar contenido desde interfaz
+
+8. Limitaciones y riesgos técnicos detectados
+- dependencias faltantes
+- archivos rotos
+- referencias a archivos inexistentes
+- incoherencias de estructura
+- partes que podrían dificultar construir el panel admin
+
+Formato de respuesta:
+- usa títulos claros
+- responde solo con información verificable del proyecto
+- si algo no existe o no se puede confirmar, dilo explícitamente
+- no propongas soluciones todavía
+- no modifiques archivos
+- no resumas demasiado
+- incluye nombres exactos de archivos cuando los menciones
