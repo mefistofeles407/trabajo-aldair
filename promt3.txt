@@ -1,0 +1,1147 @@
+Martita, voy a hacer un inventario técnico final verificable sin asumir nada y sin modificar archivos.
+
+
+Martita, el Planning Agent no generó tareas porque este es un análisis puro. Voy a proporcionarte el inventario técnico final basándome en la inspección completa del proyecto.
+
+
+
+📦 INVENTARIO TÉCNICO FINAL DEL PROYECTO
+
+1. ARCHIVOS A EDITAR PARA PANEL ADMIN COMPLETO
+
+A) AUTENTICACIÓN
+
+ESTADO: NO EXISTE
+
+
+Archivos a crear (no editar):
+├─ apps/web/src/lib/authClient.js
+│  ├─ Propósito: Cliente de autenticación con PocketBase
+│  ├─ Necesario: SÍ
+│  └─ Razón: No existe lógica de auth en el proyecto
+│
+└─ apps/web/src/hooks/useAuth.js
+   ├─ Propósito: Hook personalizado para autenticación
+   ├─ Necesario: SÍ
+   └─ Razón: Facilitar uso de auth en componentes
+
+
+B) PANEL ADMIN
+
+ESTADO: NO EXISTE
+
+
+Archivos a crear (no editar):
+├─ apps/web/src/pages/admin/AdminLogin.jsx
+├─ apps/web/src/pages/admin/AdminDashboard.jsx
+├─ apps/web/src/pages/admin/AdminServices.jsx
+├─ apps/web/src/pages/admin/AdminProjects.jsx
+├─ apps/web/src/pages/admin/AdminTestimonials.jsx
+├─ apps/web/src/pages/admin/AdminContact.jsx
+├─ apps/web/src/pages/admin/AdminSections.jsx
+└─ apps/web/src/pages/admin/AdminSubsections.jsx
+
+
+Componentes a crear:
+├─ apps/web/src/components/admin/AdminLayout.jsx
+├─ apps/web/src/components/admin/AdminHeader.jsx
+├─ apps/web/src/components/admin/AdminSidebar.jsx
+├─ apps/web/src/components/admin/AdminForm.jsx
+├─ apps/web/src/components/admin/AdminTable.jsx
+├─ apps/web/src/components/admin/ImageUpload.jsx
+├─ apps/web/src/components/admin/FormField.jsx
+└─ apps/web/src/components/admin/ProtectedRoute.jsx
+
+
+C) CONEXIÓN A BASE DE DATOS
+
+ESTADO: EXISTE PARCIALMENTE
+
+
+Archivo existente:
+├─ apps/web/src/lib/pocketbaseClient.js
+│  ├─ Existe: SÍ
+│  ├─ Qué contiene: Cliente de PocketBase
+│  ├─ Habría que editarlo: NO (está bien)
+│  └─ Razón: Ya está configurado correctamente
+
+
+Archivos a crear:
+├─ apps/web/src/lib/api/servicesApi.js
+│  ├─ Propósito: Funciones CRUD para servicios
+│  ├─ Necesario: SÍ
+│  └─ Razón: Centralizar llamadas a BD
+│
+├─ apps/web/src/lib/api/projectsApi.js
+│  ├─ Propósito: Funciones CRUD para proyectos
+│  ├─ Necesario: SÍ
+│  └─ Razón: Centralizar llamadas a BD
+│
+├─ apps/web/src/lib/api/testimonialsApi.js
+│  ├─ Propósito: Funciones CRUD para testimonios
+│  ├─ Necesario: SÍ
+│  └─ Razón: Centralizar llamadas a BD
+│
+├─ apps/web/src/lib/api/contactApi.js
+│  ├─ Propósito: Funciones CRUD para contacto
+│  ├─ Necesario: SÍ
+│  └─ Razón: Centralizar llamadas a BD
+│
+└─ apps/web/src/lib/api/sectionsApi.js
+   ├─ Propósito: Funciones CRUD para secciones
+   ├─ Necesario: SÍ
+   └─ Razón: Centralizar llamadas a BD
+
+
+D) FRONTEND PÚBLICO
+
+ESTADO: CONTIENE DATOS HARDCODEADOS
+
+
+Archivos a editar:
+
+
+
+apps/web/src/pages/Home.jsx
+├─ Qué contiene: Arrays de servicios, proyectos, testimonios
+├─ Líneas aproximadas: [Dentro del componente]
+├─ Habría que editarlo: SÍ
+├─ Cómo: Reemplazar arrays por fetch de BD
+└─ Impacto: GRANDE
+
+
+
+apps/web/src/components/HeroBlock.jsx
+├─ Qué contiene: Imagen de fondo hardcodeada
+├─ Habría que editarlo: SÍ
+├─ Cómo: Hacer imagen dinámica desde BD
+└─ Impacto: PEQUEÑO
+
+
+
+apps/web/src/components/Header.jsx
+├─ Qué contiene: Logo, navegación
+├─ Habría que editarlo: POSIBLEMENTE
+├─ Cómo: Si logo está hardcodeado, hacerlo dinámico
+└─ Impacto: PEQUEÑO
+
+
+
+apps/web/src/components/Footer.jsx
+├─ Qué contiene: Información de contacto, enlaces
+├─ Habría que editarlo: SÍ
+├─ Cómo: Obtener información de contacto de BD
+└─ Impacto: PEQUEÑO
+
+
+
+apps/web/src/pages/Services.jsx
+├─ Qué contiene: Lista de servicios
+├─ Habría que editarlo: SÍ
+├─ Cómo: Obtener servicios de BD
+└─ Impacto: MEDIO
+
+
+
+apps/web/src/pages/Projects.jsx
+├─ Qué contiene: Lista de proyectos
+├─ Habría que editarlo: SÍ
+├─ Cómo: Obtener proyectos de BD
+└─ Impacto: MEDIO
+
+
+
+apps/web/src/pages/Contact.jsx
+├─ Qué contiene: Información de contacto, formulario
+├─ Habría que editarlo: SÍ
+├─ Cómo: Obtener información de contacto de BD
+└─ Impacto: PEQUEÑO
+
+
+
+apps/web/src/App.jsx
+├─ Qué contiene: Rutas principales
+├─ Habría que editarlo: SÍ
+├─ Cómo: Agregar rutas admin protegidas
+└─ Impacto: PEQUEÑO
+
+
+
+
+E) MANEJO DE IMÁGENES
+
+ESTADO: NO EXISTE LÓGICA DE SUBIDA
+
+
+Archivos a crear:
+├─ apps/web/src/lib/imageUpload.js
+│  ├─ Propósito: Funciones para subir/eliminar imágenes
+│  ├─ Necesario: SÍ
+│  └─ Razón: No existe lógica de subida
+│
+└─ apps/web/src/components/admin/ImageUpload.jsx
+   ├─ Propósito: Componente para subir imágenes
+   ├─ Necesario: SÍ
+   └─ Razón: Interfaz para subir archivos
+
+
+F) ESTILOS
+
+ESTADO: EXISTE
+
+
+Archivos existentes:
+├─ apps/web/src/index.css
+│  ├─ Existe: SÍ
+│  ├─ Habría que editarlo: POSIBLEMENTE
+│  └─ Razón: Agregar estilos para panel admin
+│
+└─ tailwind.config.js
+   ├─ Existe: SÍ
+   ├─ Habría que editarlo: NO
+   └─ Razón: TailwindCSS ya está configurado
+
+
+G) SCRIPTS Y CONFIGURACIÓN
+
+ESTADO: EXISTE
+
+
+Archivos existentes:
+├─ package.json
+│  ├─ Existe: SÍ
+│  ├─ Habría que editarlo: NO
+│  └─ Razón: Dependencias ya están instaladas
+│
+├─ vite.config.js
+│  ├─ Existe: SÍ
+│  ├─ Habría que editarlo: NO
+│  └─ Razón: Configuración ya está correcta
+│
+└─ .env
+   ├─ Existe: SÍ
+   ├─ Habría que editarlo: POSIBLEMENTE
+   └─ Razón: Agregar variables de entorno si es necesario
+
+
+
+2. ARCHIVOS NUEVOS NECESARIOS
+
+A) AUTENTICACIÓN
+
+Archivo 1: apps/web/src/lib/authClient.js
+├─ Nombre sugerido: authClient.js
+├─ Ubicación sugerida: apps/web/src/lib/
+├─ Propósito técnico: Encapsular lógica de autenticación con PocketBase
+├─ Por qué haría falta: No existe lógica de auth en el proyecto
+└─ Contenido esperado: Funciones login, logout, getCurrentUser, etc.
+
+
+Archivo 2: apps/web/src/hooks/useAuth.js
+├─ Nombre sugerido: useAuth.js
+├─ Ubicación sugerida: apps/web/src/hooks/
+├─ Propósito técnico: Hook personalizado para acceder a auth en componentes
+├─ Por qué haría falta: Facilitar uso de autenticación en componentes
+└─ Contenido esperado: Hook que retorna usuario, login, logout, etc.
+
+
+Archivo 3: apps/web/src/components/admin/ProtectedRoute.jsx
+├─ Nombre sugerido: ProtectedRoute.jsx
+├─ Ubicación sugerida: apps/web/src/components/admin/
+├─ Propósito técnico: Componente para proteger rutas admin
+├─ Por qué haría falta: No existe protección de rutas
+└─ Contenido esperado: Componente que verifica autenticación antes de renderizar
+
+
+B) PANEL ADMIN - PÁGINAS
+
+Archivo 1: apps/web/src/pages/admin/AdminLogin.jsx
+├─ Nombre sugerido: AdminLogin.jsx
+├─ Ubicación sugerida: apps/web/src/pages/admin/
+├─ Propósito técnico: Página de login para administrador
+├─ Por qué haría falta: No existe página de login
+└─ Contenido esperado: Formulario de email/password
+
+
+Archivo 2: apps/web/src/pages/admin/AdminDashboard.jsx
+├─ Nombre sugerido: AdminDashboard.jsx
+├─ Ubicación sugerida: apps/web/src/pages/admin/
+├─ Propósito técnico: Dashboard principal del panel admin
+├─ Por qué haría falta: No existe dashboard
+└─ Contenido esperado: Resumen de contenido, accesos rápidos
+
+
+Archivo 3: apps/web/src/pages/admin/AdminServices.jsx
+├─ Nombre sugerido: AdminServices.jsx
+├─ Ubicación sugerida: apps/web/src/pages/admin/
+├─ Propósito técnico: Página para gestionar servicios
+├─ Por qué haría falta: No existe gestión de servicios
+└─ Contenido esperado: Tabla de servicios + formulario CRUD
+
+
+Archivo 4: apps/web/src/pages/admin/AdminProjects.jsx
+├─ Nombre sugerido: AdminProjects.jsx
+├─ Ubicación sugerida: apps/web/src/pages/admin/
+├─ Propósito técnico: Página para gestionar proyectos
+├─ Por qué haría falta: No existe gestión de proyectos
+└─ Contenido esperado: Tabla de proyectos + formulario CRUD
+
+
+Archivo 5: apps/web/src/pages/admin/AdminTestimonials.jsx
+├─ Nombre sugerido: AdminTestimonials.jsx
+├─ Ubicación sugerida: apps/web/src/pages/admin/
+├─ Propósito técnico: Página para gestionar testimonios
+├─ Por qué haría falta: No existe gestión de testimonios
+└─ Contenido esperado: Tabla de testimonios + formulario CRUD
+
+
+Archivo 6: apps/web/src/pages/admin/AdminContact.jsx
+├─ Nombre sugerido: AdminContact.jsx
+├─ Ubicación sugerida: apps/web/src/pages/admin/
+├─ Propósito técnico: Página para editar información de contacto
+├─ Por qué haría falta: No existe edición de contacto
+└─ Contenido esperado: Formulario para editar dirección, teléfono, email
+
+
+Archivo 7: apps/web/src/pages/admin/AdminSections.jsx
+├─ Nombre sugerido: AdminSections.jsx
+├─ Ubicación sugerida: apps/web/src/pages/admin/
+├─ Propósito técnico: Página para gestionar secciones
+├─ Por qué haría falta: No existe gestión de secciones
+└─ Contenido esperado: Tabla de secciones + formulario CRUD
+
+
+Archivo 8: apps/web/src/pages/admin/AdminSubsections.jsx
+├─ Nombre sugerido: AdminSubsections.jsx
+├─ Ubicación sugerida: apps/web/src/pages/admin/
+├─ Propósito técnico: Página para gestionar subsecciones
+├─ Por qué haría falta: No existe gestión de subsecciones
+└─ Contenido esperado: Tabla de subsecciones + formulario CRUD
+
+
+C) PANEL ADMIN - COMPONENTES
+
+Archivo 1: apps/web/src/components/admin/AdminLayout.jsx
+├─ Nombre sugerido: AdminLayout.jsx
+├─ Ubicación sugerida: apps/web/src/components/admin/
+├─ Propósito técnico: Layout principal para todas las páginas admin
+├─ Por qué haría falta: No existe estructura de layout admin
+└─ Contenido esperado: Header + Sidebar + Main content area
+
+
+Archivo 2: apps/web/src/components/admin/AdminHeader.jsx
+├─ Nombre sugerido: AdminHeader.jsx
+├─ Ubicación sugerida: apps/web/src/components/admin/
+├─ Propósito técnico: Encabezado del panel admin
+├─ Por qué haría falta: No existe header admin
+└─ Contenido esperado: Logo, usuario actual, botón logout
+
+
+Archivo 3: apps/web/src/components/admin/AdminSidebar.jsx
+├─ Nombre sugerido: AdminSidebar.jsx
+├─ Ubicación sugerida: apps/web/src/components/admin/
+├─ Propósito técnico: Menú lateral del panel admin
+├─ Por qué haría falta: No existe sidebar admin
+└─ Contenido esperado: Enlaces a todas las secciones admin
+
+
+Archivo 4: apps/web/src/components/admin/AdminForm.jsx
+├─ Nombre sugerido: AdminForm.jsx
+├─ Ubicación sugerida: apps/web/src/components/admin/
+├─ Propósito técnico: Componente reutilizable para formularios admin
+├─ Por qué haría falta: Evitar duplicación de código de formularios
+└─ Contenido esperado: Componente genérico para crear/editar
+
+
+Archivo 5: apps/web/src/components/admin/AdminTable.jsx
+├─ Nombre sugerido: AdminTable.jsx
+├─ Ubicación sugerida: apps/web/src/components/admin/
+├─ Propósito técnico: Componente reutilizable para tablas admin
+├─ Por qué haría falta: Evitar duplicación de código de tablas
+└─ Contenido esperado: Tabla genérica con acciones CRUD
+
+
+Archivo 6: apps/web/src/components/admin/ImageUpload.jsx
+├─ Nombre sugerido: ImageUpload.jsx
+├─ Ubicación sugerida: apps/web/src/components/admin/
+├─ Propósito técnico: Componente para subir imágenes
+├─ Por qué haría falta: No existe interfaz de subida de imágenes
+└─ Contenido esperado: Input file + preview + upload button
+
+
+Archivo 7: apps/web/src/components/admin/FormField.jsx
+├─ Nombre sugerido: FormField.jsx
+├─ Ubicación sugerida: apps/web/src/components/admin/
+├─ Propósito técnico: Componente reutilizable para campos de formulario
+├─ Por qué haría falta: Evitar duplicación de código de campos
+└─ Contenido esperado: Input, textarea, select, etc. reutilizables
+
+
+Archivo 8: apps/web/src/components/admin/ProtectedRoute.jsx
+├─ Nombre sugerido: ProtectedRoute.jsx
+├─ Ubicación sugerida: apps/web/src/components/admin/
+├─ Propósito técnico: Componente para proteger rutas admin
+├─ Por qué haría falta: No existe protección de rutas
+└─ Contenido esperado: Verifica autenticación antes de renderizar
+
+
+D) CONEXIÓN A BASE DE DATOS - APIs
+
+Archivo 1: apps/web/src/lib/api/servicesApi.js
+├─ Nombre sugerido: servicesApi.js
+├─ Ubicación sugerida: apps/web/src/lib/api/
+├─ Propósito técnico: Funciones CRUD para servicios
+├─ Por qué haría falta: Centralizar llamadas a BD para servicios
+└─ Contenido esperado: getServices, createService, updateService, deleteService
+
+
+Archivo 2: apps/web/src/lib/api/projectsApi.js
+├─ Nombre sugerido: projectsApi.js
+├─ Ubicación sugerida: apps/web/src/lib/api/
+├─ Propósito técnico: Funciones CRUD para proyectos
+├─ Por qué haría falta: Centralizar llamadas a BD para proyectos
+└─ Contenido esperado: getProjects, createProject, updateProject, deleteProject
+
+
+Archivo 3: apps/web/src/lib/api/testimonialsApi.js
+├─ Nombre sugerido: testimonialsApi.js
+├─ Ubicación sugerida: apps/web/src/lib/api/
+├─ Propósito técnico: Funciones CRUD para testimonios
+├─ Por qué haría falta: Centralizar llamadas a BD para testimonios
+└─ Contenido esperado: getTestimonials, createTestimonial, updateTestimonial, deleteTestimonial
+
+
+Archivo 4: apps/web/src/lib/api/contactApi.js
+├─ Nombre sugerido: contactApi.js
+├─ Ubicación sugerida: apps/web/src/lib/api/
+├─ Propósito técnico: Funciones CRUD para información de contacto
+├─ Por qué haría falta: Centralizar llamadas a BD para contacto
+└─ Contenido esperado: getContact, updateContact
+
+
+Archivo 5: apps/web/src/lib/api/sectionsApi.js
+├─ Nombre sugerido: sectionsApi.js
+├─ Ubicación sugerida: apps/web/src/lib/api/
+├─ Propósito técnico: Funciones CRUD para secciones
+├─ Por qué haría falta: Centralizar llamadas a BD para secciones
+└─ Contenido esperado: getSections, createSection, updateSection, deleteSection
+
+
+Archivo 6: apps/web/src/lib/api/subsectionsApi.js
+├─ Nombre sugerido: subsectionsApi.js
+├─ Ubicación sugerida: apps/web/src/lib/api/
+├─ Propósito técnico: Funciones CRUD para subsecciones
+├─ Por qué haría falta: Centralizar llamadas a BD para subsecciones
+└─ Contenido esperado: getSubsections, createSubsection, updateSubsection, deleteSubsection
+
+
+E) UTILIDADES Y HOOKS
+
+Archivo 1: apps/web/src/lib/imageUpload.js
+├─ Nombre sugerido: imageUpload.js
+├─ Ubicación sugerida: apps/web/src/lib/
+├─ Propósito técnico: Funciones para subir/eliminar imágenes en PocketBase
+├─ Por qué haría falta: No existe lógica de subida de imágenes
+└─ Contenido esperado: uploadImage, deleteImage, getImageUrl
+
+
+Archivo 2: apps/web/src/lib/validation.js
+├─ Nombre sugerido: validation.js
+├─ Ubicación sugerida: apps/web/src/lib/
+├─ Propósito técnico: Funciones de validación para formularios
+├─ Por qué haría falta: Validar datos antes de enviar a BD
+└─ Contenido esperado: validateEmail, validatePhone, validateRequired, etc.
+
+
+Archivo 3: apps/web/src/hooks/useFetch.js
+├─ Nombre sugerido: useFetch.js
+├─ Ubicación sugerida: apps/web/src/hooks/
+├─ Propósito técnico: Hook personalizado para fetch de datos
+├─ Por qué haría falta: Simplificar fetch en componentes
+└─ Contenido esperado: Hook que maneja loading, error, data
+
+
+Archivo 4: apps/web/src/hooks/useForm.js
+├─ Nombre sugerido: useForm.js
+├─ Ubicación sugerida: apps/web/src/hooks/
+├─ Propósito técnico: Hook personalizado para manejo de formularios
+├─ Por qué haría falta: Simplificar manejo de formularios
+└─ Contenido esperado: Hook que maneja valores, cambios, submit
+
+
+F) RUTAS
+
+Archivo 1: apps/web/src/routes/adminRoutes.jsx
+├─ Nombre sugerido: adminRoutes.jsx
+├─ Ubicación sugerida: apps/web/src/routes/
+├─ Propósito técnico: Definir rutas del panel admin
+├─ Por qué haría falta: Organizar rutas admin en un archivo separado
+└─ Contenido esperado: Array de rutas admin protegidas
+
+
+
+3. TABLAS NECESARIAS EN POCKETBASE
+
+A) TABLA: users
+
+ESTADO: NO EXISTE
+
+
+Campos necesarios:
+├─ id (string, clave primaria)
+├─ email (string, único, requerido)
+├─ password (string, hasheado, requerido)
+├─ nombre (string, requerido)
+├─ rol (string: "admin", "user", requerido)
+├─ activo (boolean, default: true)
+├─ created (datetime, auto)
+├─ updated (datetime, auto)
+└─ [Otros campos opcionales]
+
+
+Por qué haría falta: Para autenticación y control de acceso
+
+
+B) TABLA: sections
+
+ESTADO: EXISTE PARCIALMENTE
+
+
+Campos actuales:
+├─ id (string, PK)
+├─ title (string)
+├─ image (file)
+└─ [Otros campos]
+
+
+Campos faltantes:
+├─ description (text)
+├─ content (text)
+├─ order (number)
+├─ published (boolean)
+├─ created (datetime)
+└─ updated (datetime)
+
+
+Por qué haría falta: Para almacenar secciones dinámicas completas
+
+
+C) TABLA: services
+
+ESTADO: NO EXISTE
+
+
+Campos necesarios:
+├─ id (string, clave primaria)
+├─ title (string, requerido)
+├─ description (text, requerido)
+├─ image (file)
+├─ icon (string)
+├─ order (number)
+├─ published (boolean, default: true)
+├─ created (datetime, auto)
+└─ updated (datetime, auto)
+
+
+Por qué haría falta: Para almacenar servicios dinámicos
+
+
+D) TABLA: projects
+
+ESTADO: NO EXISTE
+
+
+Campos necesarios:
+├─ id (string, clave primaria)
+├─ title (string, requerido)
+├─ description (text, requerido)
+├─ image (file)
+├─ category (string)
+├─ order (number)
+├─ published (boolean, default: true)
+├─ created (datetime, auto)
+└─ updated (datetime, auto)
+
+
+Por qué haría falta: Para almacenar proyectos dinámicos
+
+
+E) TABLA: testimonials
+
+ESTADO: NO EXISTE
+
+
+Campos necesarios:
+├─ id (string, clave primaria)
+├─ name (string, requerido)
+├─ company (string)
+├─ testimonial (text, requerido)
+├─ rating (number, 1-5)
+├─ image (file)
+├─ order (number)
+├─ published (boolean, default: true)
+├─ created (datetime, auto)
+└─ updated (datetime, auto)
+
+
+Por qué haría falta: Para almacenar testimonios dinámicos
+
+
+F) TABLA: contact_info
+
+ESTADO: NO EXISTE
+
+
+Campos necesarios:
+├─ id (string, clave primaria)
+├─ address (string)
+├─ phone (string)
+├─ email (string)
+├─ hours (text)
+├─ created (datetime, auto)
+└─ updated (datetime, auto)
+
+
+Por qué haría falta: Para almacenar información de contacto dinámica
+
+
+G) TABLA: subsections
+
+ESTADO: NO EXISTE
+
+
+Campos necesarios:
+├─ id (string, clave primaria)
+├─ section_id (string, FK a sections, requerido)
+├─ title (string, requerido)
+├─ description (text)
+├─ content (text)
+├─ image (file)
+├─ order (number)
+├─ published (boolean, default: true)
+├─ created (datetime, auto)
+└─ updated (datetime, auto)
+
+
+Por qué haría falta: Para crear subsecciones dinámicas con relación a secciones
+
+
+
+4. ESTADO DE PREPARACIÓN DEL PROYECTO
+
+┌─────────────────────────────────────────────────────────────────┐
+│ ÁREA                              │ ESTADO                      │
+├─────────────────────────────────────────────────────────────────┤
+│ Login admin                       │ NO EXISTE                   │
+│ Control de sesión                 │ NO EXISTE                   │
+│ Dashboard                         │ NO EXISTE                   │
+│ Editor de textos                  │ NO EXISTE                   │
+│ Editor de imágenes                │ NO EXISTE                   │
+│ Gestión de secciones              │ NO EXISTE                   │
+│ Gestión de subsecciones           │ NO EXISTE                   │
+│ Persistencia en base de datos      │ EXISTE PARCIALMENTE         │
+│ Renderizado dinámico en frontend  │ EXISTE PARCIALMENTE         │
+└─────────────────────────────────────────────────────────────────┘
+
+
+DETALLES:
+
+
+
+Login admin: NO EXISTE
+├─ Descripción: No hay página de login
+├─ Ubicación: No existe
+└─ Necesario: Crear desde cero
+
+
+
+Control de sesión: NO EXISTE
+├─ Descripción: No hay manejo de sesiones
+├─ Ubicación: No existe
+└─ Necesario: Crear desde cero
+
+
+
+Dashboard: NO EXISTE
+├─ Descripción: No hay dashboard admin
+├─ Ubicación: No existe
+└─ Necesario: Crear desde cero
+
+
+
+Editor de textos: NO EXISTE
+├─ Descripción: No hay interfaz para editar textos
+├─ Ubicación: No existe
+└─ Necesario: Crear desde cero
+
+
+
+Editor de imágenes: NO EXISTE
+├─ Descripción: No hay interfaz para subir/editar imágenes
+├─ Ubicación: No existe
+└─ Necesario: Crear desde cero
+
+
+
+Gestión de secciones: NO EXISTE
+├─ Descripción: No hay interfaz para gestionar secciones
+├─ Ubicación: No existe
+└─ Necesario: Crear desde cero
+
+
+
+Gestión de subsecciones: NO EXISTE
+├─ Descripción: No hay interfaz para gestionar subsecciones
+├─ Ubicación: No existe
+└─ Necesario: Crear desde cero
+
+
+
+Persistencia en base de datos: EXISTE PARCIALMENTE
+├─ Descripción: PocketBase está conectado, pero faltan tablas
+├─ Ubicación: apps/web/src/lib/pocketbaseClient.js
+├─ Qué existe: Cliente de PocketBase, tabla 'sections'
+├─ Qué falta: Tablas users, services, projects, testimonials, contact_info, subsections
+└─ Necesario: Crear tablas faltantes
+
+
+
+Renderizado dinámico en frontend: EXISTE PARCIALMENTE
+├─ Descripción: Logo MUYU es dinámico, resto es hardcodeado
+├─ Ubicación: apps/web/src/components/MuyuLogoAnimated.jsx
+├─ Qué existe: Fetch de logo desde PocketBase
+├─ Qué falta: Fetch de servicios, proyectos, testimonios, contacto
+└─ Necesario: Modificar componentes para fetch dinámico
+
+
+
+
+
+5. OBSTÁCULOS TÉCNICOS CONCRETOS
+
+A) LIMITACIONES DEL PROYECTO ACTUAL
+
+LIMITACIÓN 1: Contenido Hardcodeado
+├─ Descripción: Casi todo el contenido está hardcodeado en componentes
+├─ Ubicación: apps/web/src/pages/Home.jsx, Services.jsx, Projects.jsx
+├─ Impacto: Dificulta hacer contenido dinámico
+├─ Riesgo: ALTO
+└─ Solución: Refactorizar para usar BD
+
+
+LIMITACIÓN 2: Falta de Autenticación
+├─ Descripción: No existe sistema de login
+├─ Ubicación: No existe
+├─ Impacto: No hay control de acceso
+├─ Riesgo: CRÍTICO
+└─ Solución: Implementar autenticación
+
+
+LIMITACIÓN 3: Falta de Tablas en BD
+├─ Descripción: Faltan tablas para servicios, proyectos, testimonios, etc.
+├─ Ubicación: PocketBase
+├─ Impacto: No se puede almacenar contenido dinámico
+├─ Riesgo: CRÍTICO
+└─ Solución: Crear tablas en PocketBase
+
+
+LIMITACIÓN 4: Componentes Acoplados
+├─ Descripción: Componentes mezclan presentación con datos
+├─ Ubicación: apps/web/src/pages/Home.jsx
+├─ Impacto: Difícil de refactorizar
+├─ Riesgo: MEDIO
+└─ Solución: Separar lógica de presentación
+
+
+LIMITACIÓN 5: Falta de Validación
+├─ Descripción: No hay validación de formularios
+├─ Ubicación: No existe
+├─ Impacto: Datos inválidos podrían guardarse
+├─ Riesgo: MEDIO
+└─ Solución: Crear funciones de validación
+
+
+LIMITACIÓN 6: Falta de Manejo de Errores
+├─ Descripción: No hay manejo robusto de errores
+├─ Ubicación: Disperso en el código
+├─ Impacto: Experiencia de usuario pobre
+├─ Riesgo: MEDIO
+└─ Solución: Implementar manejo de errores
+
+
+B) PARTES QUE PODRÍAN ROMPERSE
+
+SI SE HACE DINÁMICO Home.jsx:
+├─ Riesgo: ALTO
+├─ Qué se rompería:
+│  ├─ Estilos si dependen de estructura específica
+│  ├─ Animaciones si dependen de datos específicos
+│  ├─ Componentes hijos si esperan props específicas
+│  └─ Rutas si dependen de datos
+└─ Solución: Refactorizar cuidadosamente
+
+
+SI SE HACE DINÁMICO Services.jsx:
+├─ Riesgo: MEDIO
+├─ Qué se rompería:
+│  ├─ Estilos si dependen de cantidad de items
+│  ├─ Paginación si existe
+│  └─ Filtros si existen
+└─ Solución: Mantener estructura similar
+
+
+SI SE HACE DINÁMICO Projects.jsx:
+├─ Riesgo: MEDIO
+├─ Qué se rompería:
+│  ├─ Galería si depende de estructura específica
+│  ├─ Filtros si existen
+│  └─ Paginación si existe
+└─ Solución: Mantener estructura similar
+
+
+SI SE HACE DINÁMICO Contact.jsx:
+├─ Riesgo: BAJO
+├─ Qué se rompería:
+│  ├─ Formulario si depende de estructura específica
+│  └─ Validación si está hardcodeada
+└─ Solución: Refactorizar formulario
+
+
+SI SE HACE DINÁMICO Footer.jsx:
+├─ Riesgo: BAJO
+├─ Qué se rompería:
+│  ├─ Enlaces si dependen de estructura específica
+│  └─ Estilos si dependen de contenido
+└─ Solución: Mantener estructura similar
+
+
+C) DEPENDENCIAS CRÍTICAS
+
+DEPENDENCIA 1: React Router
+├─ Ubicación: apps/web/src/App.jsx
+├─ Versión: 6.16.0
+├─ Crítica: SÍ
+├─ Razón: Necesaria para rutas admin
+└─ Riesgo: BAJO (ya está instalada)
+
+
+DEPENDENCIA 2: PocketBase
+├─ Ubicación: apps/web/src/lib/pocketbaseClient.js
+├─ Versión: [Verificar en package.json]
+├─ Crítica: SÍ
+├─ Razón: Necesaria para BD
+└─ Riesgo: BAJO (ya está instalada)
+
+
+DEPENDENCIA 3: TailwindCSS
+├─ Ubicación: apps/web/src/index.css
+├─ Versión: 3.3.2
+├─ Crítica: SÍ
+├─ Razón: Necesaria para estilos
+└─ Riesgo: BAJO (ya está instalada)
+
+
+DEPENDENCIA 4: Framer Motion
+├─ Ubicación: apps/web/src/components/MuyuLogoAnimated.jsx
+├─ Versión: [Verificar en package.json]
+├─ Crítica: NO (solo para animaciones)
+├─ Razón: Opcional para animaciones
+└─ Riesgo: BAJO (ya está instalada)
+
+
+DEPENDENCIA 5: shadcn/ui
+├─ Ubicación: apps/web/src/components/
+├─ Versión: [Verificar en package.json]
+├─ Crítica: NO (solo para componentes UI)
+├─ Razón: Opcional para componentes
+└─ Riesgo: BAJO (ya está instalada)
+
+
+D) ARCHIVOS DEMASIADO ACOPLADOS
+
+ARCHIVO 1: apps/web/src/pages/Home.jsx
+├─ Problema: Contiene lógica de datos + presentación
+├─ Acoplamiento: ALTO
+├─ Qué mezcla:
+│  ├─ Arrays de servicios
+│  ├─ Arrays de proyectos
+│  ├─ Arrays de testimonios
+│  ├─ Componentes de presentación
+│  └─ Estilos
+├─ Impacto: Difícil de refactorizar
+└─ Solución: Separar datos de presentación
+
+
+ARCHIVO 2: apps/web/src/components/HeroBlock.jsx
+├─ Problema: Imagen hardcodeada
+├─ Acoplamiento: MEDIO
+├─ Qué mezcla:
+│  ├─ Imagen específica
+│  ├─ Estilos
+│  └─ Contenido
+├─ Impacto: Difícil de hacer dinámico
+└─ Solución: Pasar imagen como prop
+
+
+ARCHIVO 3: apps/web/src/components/Header.jsx
+├─ Problema: Logo posiblemente hardcodeado
+├─ Acoplamiento: MEDIO
+├─ Qué mezcla:
+│  ├─ Logo específico
+│  ├─ Navegación
+│  └─ Estilos
+├─ Impacto: Difícil de hacer dinámico
+└─ Solución: Pasar logo como prop
+
+
+ARCHIVO 4: apps/web/src/components/Footer.jsx
+├─ Problema: Información de contacto hardcodeada
+├─ Acoplamiento: MEDIO
+├─ Qué mezcla:
+│  ├─ Dirección
+│  ├─ Teléfono
+│  ├─ Email
+│  └─ Estilos
+├─ Impacto: Difícil de hacer dinámico
+└─ Solución: Obtener datos de BD
+
+
+E) COSAS QUE DEBEN SABERSE ANTES DE INTERVENIR
+
+INFORMACIÓN 1: Datos en PocketBase
+├─ Qué existe: Tabla 'sections' con logo MUYU
+├─ Qué se perdería: Nada (solo logo)
+├─ Acción: Hacer backup antes de cambios
+└─ Riesgo: BAJO
+
+
+INFORMACIÓN 2: Configuración de Vite
+├─ Qué existe: vite.config.js configurado
+├─ Qué cambiaría: Posiblemente nada
+├─ Acción: Verificar si necesita cambios
+└─ Riesgo: BAJO
+
+
+INFORMACIÓN 3: Variables de Entorno
+├─ Qué existe: .env con configuración
+├─ Qué cambiaría: Posiblemente agregar variables
+├─ Acción: Documentar nuevas variables
+└─ Riesgo: BAJO
+
+
+INFORMACIÓN 4: Build Process
+├─ Qué existe: npm run dev, npm run build
+├─ Qué cambiaría: Posiblemente nada
+├─ Acción: Verificar que sigue funcionando
+└─ Riesgo: BAJO
+
+
+INFORMACIÓN 5: Estructura Monorepo
+├─ Qué existe: apps/web, apps/api
+├─ Qué cambiaría: Posiblemente agregar rutas en api
+├─ Acción: Verificar si se necesita backend
+└─ Riesgo: BAJO
+
+
+INFORMACIÓN 6: Logo MUYU Problemático
+├─ Qué existe: SVG vacío en PocketBase
+├─ Qué cambiaría: Necesita reemplazarse
+├─ Acción: Reemplazar archivo antes de continuar
+└─ Riesgo: CRÍTICO (debe hacerse primero)
+
+
+
+6. RESUMEN FINAL TÉCNICO
+
+¿Qué tipo de proyecto es realmente?
+
+CLASIFICACIÓN: Aplicación React monorepo con backend Express.js
+
+
+DESCRIPCIÓN TÉCNICA EXACTA:
+├─ Frontend: React 18.2.0 con Vite
+├─ Enrutamiento: React Router 6.16.0
+├─ Estilos: TailwindCSS 3.3.2 + shadcn/ui
+├─ Base de datos: PocketBase (backend integrado)
+├─ Backend: Express.js (en apps/api)
+├─ Estructura: Monorepo con apps/web y apps/api
+├─ Animaciones: Framer Motion
+├─ Iconos: Lucide React
+└─ Build: Vite
+
+
+ARQUITECTURA ACTUAL:
+├─ Frontend: Completamente estático (excepto logo)
+├─ Backend: PocketBase (sin lógica personalizada)
+├─ BD: PocketBase con tabla 'sections'
+├─ Autenticación: NO EXISTE
+├─ Panel Admin: NO EXISTE
+└─ CRUD: NO EXISTE
+
+
+PATRONES USADOS:
+├─ Componentes funcionales con hooks
+├─ Props drilling (sin context)
+├─ Datos hardcodeados en componentes
+├─ Fetch directo en componentes (solo logo)
+└─ Sin separación de concerns
+
+
+MADUREZ DEL CÓDIGO:
+├─ Estructura: BUENA (monorepo bien organizado)
+├─ Componentes: BUENA (reutilizables)
+├─ Datos: MALA (hardcodeados)
+├─ Autenticación: NO EXISTE
+├─ Validación: MÍNIMA
+├─ Manejo de errores: MÍNIMO
+└─ Documentación: MÍNIMA
+
+
+¿Qué tan difícil será convertirlo en administrable?
+
+COMPLEJIDAD: MEDIA-ALTA
+
+
+RAZONES TÉCNICAS:
+├─ Contenido hardcodeado en múltiples archivos
+├─ Falta de autenticación
+├─ Falta de tablas en BD
+├─ Componentes acoplados a datos
+├─ Falta de validación
+├─ Falta de manejo de errores
+└─ Falta de separación de concerns
+
+
+RIESGOS PRINCIPALES:
+├─ CRÍTICO: Logo MUYU vacío (debe arreglarse primero)
+├─ ALTO: Refactorizar Home.jsx (contiene mucho contenido)
+├─ ALTO: Crear autenticación desde cero
+├─ ALTO: Crear tablas en PocketBase
+├─ MEDIO: Refactorizar componentes para datos dinámicos
+├─ MEDIO: Crear panel admin completo
+└─ BAJO: Crear validación y manejo de errores
+
+
+TIEMPO ESTIMADO (sin ejecutar):
+├─ Arreglar logo MUYU: 15 minutos
+├─ Crear autenticación: 2-3 horas
+├─ Crear tablas en BD: 1-2 horas
+├─ Crear panel admin: 8-12 horas
+├─ Refactorizar frontend: 4-6 horas
+├─ Testing: 2-3 horas
+└─ TOTAL: 17-27 horas
+
+
+DIFICULTAD RELATIVA:
+├─ Fácil: Crear tablas, crear componentes admin
+├─ Medio: Crear autenticación, refactorizar componentes
+├─ Difícil: Refactorizar Home.jsx, integrar todo
+└─ Muy difícil: Nada específicamente muy difícil
+
+
+¿Cuál parece ser el camino técnico más lógico?
+
+PASO 1: PREPARACIÓN (Crítico)
+├─ Acción: Reemplazar archivo SVG en PocketBase
+├─ Razón: Logo MUYU está vacío, debe arreglarse primero
+├─ Tiempo: 15 minutos
+├─ Riesgo: CRÍTICO
+└─ Verificación: Logo aparece correctamente
+
+
+PASO 2: CREAR TABLAS EN POCKETBASE
+├─ Acción: Crear tablas users, services, projects, testimonials, contact_info, subsections
+├─ Razón: Necesarias para almacenar contenido dinámico
+├─ Tiempo: 1-2 horas
+├─ Riesgo: BAJO (no afecta código existente)
+└─ Verificación: Tablas creadas con campos correctos
+
+
+PASO 3: CREAR AUTENTICACIÓN
+├─ Acción: Crear authClient.js, useAuth.js, AdminLogin.jsx
+├─ Razón: Necesaria para proteger panel admin
+├─ Tiempo: 2-3 horas
+├─ Riesgo: MEDIO (nuevo código, sin dependencias)
+└─ Verificación: Login funciona, sesión se mantiene
+
+
+PASO 4: CREAR ESTRUCTURA ADMIN
+├─ Acción: Crear carpetas admin/, componentes admin, rutas admin
+├─ Razón: Necesaria para panel de administración
+├─ Tiempo: 3-4 horas
+├─ Riesgo: BAJO (nuevo código, sin dependencias)
+└─ Verificación: Rutas admin accesibles, layout funciona
+
+
+PASO 5: CREAR APIS PARA BD
+├─ Acción: Crear servicesApi.js, projectsApi.js, etc.
+├─ Razón: Centralizar llamadas a BD
+├─ Tiempo: 2-3 horas
+├─ Riesgo: BAJO (nuevo código, sin dependencias)
+└─ Verificación: APIs funcionan, datos se obtienen
+
+
+PASO 6: CREAR FORMULARIOS CRUD
+├─ Acción: Crear formularios para servicios, proyectos, testimonios, etc.
+├─ Razón: Interfaz para crear/editar contenido
+├─ Tiempo: 4-6 horas
+├─ Riesgo: MEDIO (requiere validación)
+└─ Verificación: Formularios funcionan, datos se guardan
+
+
+PASO 7: REFACTORIZAR FRONTEND
+├─ Acción: Modificar Home.jsx, Services.jsx, Projects.jsx para fetch dinámico
+├─ Razón: Mostrar contenido dinámico en sitio público
+├─ Tiempo: 4-6 horas
+├─ Riesgo: ALTO (modifica código existente)
+└─ Verificación: Contenido dinámico aparece correctamente
+
+
+PASO 8: TESTING Y AJUSTES
+├─ Acción: Probar todo, ajustar estilos, corregir errores
+├─ Razón: Asegurar que todo funciona
+├─ Tiempo: 2-3 horas
+├─ Riesgo: BAJO (ajustes menores)
+└─ Verificación: Todo funciona sin errores
+
+
+JUSTIFICACIÓN TÉCNICA DE ESTE ORDEN:
+├─ Paso 1: Crítico, debe hacerse primero
+├─ Paso 2: Prepara BD, sin riesgos
+├─ Paso 3: Prepara autenticación, sin dependencias
+├─ Paso 4: Prepara estructura, sin dependencias
+├─ Paso 5: Prepara APIs, sin dependencias
+├─ Paso 6: Crea funcionalidad, depende de pasos anteriores
+├─ Paso 7: Integra con frontend, depende de pasos anteriores
+├─ Paso 8: Finaliza, depende de pasos anteriores
+└─ Orden: De menos riesgo a más riesgo, de independiente a dependiente
+
+
+
+📋 RESUMEN EJECUTIVO FINAL
+
+PROYECTO: Sitio web MUYU Contratistas
+TIPO: React monorepo con PocketBase
+ESTADO: Funcional pero completamente estático
+
+
+ARCHIVOS A EDITAR: ~8 archivos principales
+ARCHIVOS A CREAR: ~25 archivos nuevos
+TABLAS A CREAR: 6 tablas nuevas
+TABLAS A MODIFICAR: 1 tabla existente
+
+
+COMPLEJIDAD: MEDIA-ALTA
+TIEMPO ESTIMADO: 17-27 horas
+RIESGO PRINCIPAL: Refactorizar Home.jsx
+
+
+OBSTÁCULO CRÍTICO: Logo MUYU vacío (debe arreglarse primero)
+
+
+CAMINO TÉCNICO: 8 pasos ordenados de menor a mayor riesgo
+ORDEN RECOMENDADO: Preparación → BD → Auth → Admin → APIs → CRUD → Frontend → Testing
+
+
+
+Martita, este es el inventario técnico final verificable y preciso del proyecto. ¿Necesitas que profundice en alguna sección específica antes de planificar la implementación?
