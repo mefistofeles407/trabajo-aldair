@@ -95,6 +95,29 @@ Crear las siguientes colecciones en el panel de PocketBase:
 
 ---
 
+## Colección: `team_members`
+
+| Campo    | Tipo   | Opciones                        |
+|---------|--------|---------------------------------|
+| name    | text   | required                        |
+| role    | text   |                                 |
+| bio     | editor |                                 |
+| photo   | file   | types: jpg, png, webp, max: 5MB |
+| email   | email  |                                 |
+| linkedin | url   |                                 |
+| order   | number | default: 0                      |
+| visible | bool   | default: true                   |
+
+**Permisos:** List/View: todos | Create/Update/Delete: solo admin
+
+**Integración con `mefistofeles.jpg`:**
+- Crear un registro inicial con `name = "Aldair"` (o el nombre del arquitecto).
+- En el campo `photo`, subir el archivo `mefistofeles.jpg` (disponible en `apps/web/public/images/mefistofeles.jpg`).
+- Una vez subido a PocketBase, el campo `photo` sustituye automáticamente a la imagen estática.
+- La imagen estática `/images/mefistofeles.jpg` sirve como respaldo visual durante la configuración.
+
+---
+
 ## Colección: `contact_info`
 
 | Campo            | Tipo  | Opciones |
@@ -158,3 +181,37 @@ Para `contact_messages`:
 cp .env.example .env
 # Editar .env con la URL correcta de PocketBase
 ```
+
+---
+
+## Paso 7: Integrar la imagen del arquitecto (mefistofeles.jpg)
+
+La imagen `mefistofeles.jpg` es la fotografía de perfil del arquitecto principal.
+Se encuentra en `apps/web/public/images/mefistofeles.jpg` y se sirve como recurso estático.
+
+### Formato y ubicación
+- **Ruta estática:** `apps/web/public/images/mefistofeles.jpg`
+- **URL pública:** `/images/mefistofeles.jpg`
+- **Formato recomendado:** JPEG, máximo 5 MB, dimensiones mínimas 400×400 px
+- **Uso ideal:** imagen de avatar circular en la sección "Nuestro Equipo" de la página Nosotros
+
+### Compatibilidad
+| Uso              | Compatible | Notas                                     |
+|-----------------|:----------:|-------------------------------------------|
+| Avatar / perfil | ✅         | Formato cuadrado ideal para `border-radius: 50%` |
+| Hero (banner)   | ⚠️         | Requiere imagen > 1200px de ancho         |
+| Decorativo      | ✅         | Funciona como foto de equipo o subsección |
+
+### Migrar a PocketBase (panel admin)
+
+1. En el panel admin ir a `/admin/equipo`
+2. Crear un nuevo integrante con los datos del arquitecto
+3. En el campo "Foto de perfil", subir `mefistofeles.jpg`
+4. PocketBase almacena la imagen y genera una URL dinámica
+5. La página "Nosotros" mostrará automáticamente la foto desde PocketBase
+
+### Riesgos y consideraciones
+- **Tamaño:** Si la imagen supera 5 MB, el upload será rechazado por la validación (`imageUpload.js`)
+- **Formato:** Solo se aceptan `jpg`, `png`, `webp` en la colección `team_members`
+- **Compresión:** Comprimir a ≤ 200 KB con calidad 80 % antes de subir para mejor rendimiento
+- **Alt text:** Siempre proporcionar texto alternativo descriptivo para accesibilidad

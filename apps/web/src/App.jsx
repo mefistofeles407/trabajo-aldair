@@ -23,6 +23,7 @@ import ServicesAdmin from './pages/admin/ServicesAdmin.jsx'
 import ProjectsAdmin from './pages/admin/ProjectsAdmin.jsx'
 import TestimonialsAdmin from './pages/admin/TestimonialsAdmin.jsx'
 import ContactAdmin from './pages/admin/ContactAdmin.jsx'
+import TeamAdmin from './pages/admin/TeamAdmin.jsx'
 
 /**
  * App.jsx
@@ -83,6 +84,7 @@ export default function App() {
           <Route path="servicios" element={<ServicesAdmin />} />
           <Route path="proyectos" element={<ProjectsAdmin />} />
           <Route path="testimonios" element={<TestimonialsAdmin />} />
+          <Route path="equipo" element={<TeamAdmin />} />
           <Route path="contacto" element={<ContactAdmin />} />
         </Route>
 

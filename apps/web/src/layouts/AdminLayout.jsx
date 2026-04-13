@@ -11,6 +11,7 @@ import {
   Menu,
   X,
   ChevronRight,
+  Users,
 } from 'lucide-react'
 import { useAuth } from '../hooks/useAuth.js'
 
@@ -21,6 +22,7 @@ const ADMIN_LINKS = [
   { label: 'Servicios', to: '/admin/servicios', icon: Wrench },
   { label: 'Proyectos', to: '/admin/proyectos', icon: FolderOpen },
   { label: 'Testimonios', to: '/admin/testimonios', icon: Star },
+  { label: 'Equipo', to: '/admin/equipo', icon: Users },
   { label: 'Contacto', to: '/admin/contacto', icon: Phone },
 ]
 
