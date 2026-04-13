@@ -1,0 +1,76 @@
+Ahora necesito un análisis técnico profundo, exacto y verificable sobre el contenido editable del sitio y sobre cualquier intento actual de panel de administración.
+
+No hagas cambios. No asumas. Solo inspecciona el proyecto real y responde con precisión.
+
+Quiero que me indiques:
+
+1. Qué contenidos del sitio deberían ser editables
+Analiza el sitio actual y enumera exactamente:
+- textos principales
+- subtítulos
+- descripciones
+- botones
+- imágenes
+- banners
+- cards
+- secciones
+- subsecciones
+- testimonios, proyectos, servicios, contacto o cualquier bloque encontrado
+
+2. Dónde está guardado actualmente cada contenido
+Para cada contenido editable detectado, indica:
+- nombre del contenido
+- archivo donde está definido
+- si está en HTML/PHP directamente
+- si viene de base de datos
+- si viene de un archivo JSON u otra fuente
+- si está duplicado en varios archivos
+
+3. Sistema actual de imágenes
+- qué carpetas contienen imágenes del sitio
+- qué archivos las referencian
+- si hay imágenes quemadas en el código
+- si existe alguna lógica de subida o reemplazo de imágenes
+- qué imágenes deberían ser administrables desde panel
+
+4. Estado actual del panel de administración, si existe algo empezado
+- qué archivos parecen pertenecer al panel
+- qué vistas o pantallas existen
+- si ya hay formulario de login
+- si ya hay dashboard
+- si ya hay formularios para editar contenido
+- si ya hay lógica para guardar cambios
+- qué sí funciona y qué no
+
+5. Operaciones que actualmente serían posibles o imposibles
+Indica si actualmente el sistema permite o no:
+- iniciar sesión
+- cerrar sesión
+- editar texto
+- editar imágenes
+- crear secciones
+- eliminar secciones
+- crear subsecciones
+- eliminar subsecciones
+- guardar cambios en base de datos
+- reflejar cambios en el sitio público
+
+6. Modelo de datos actual relacionado con contenido
+- tablas existentes relacionadas con contenido
+- campos relevantes
+- claves primarias
+- relaciones si existen
+- si la estructura actual permitiría crear secciones y subsecciones dinámicas o no
+
+7. Dependencias entre frontend público y panel admin
+- qué archivos del frontend tendrían que cambiar para que el panel funcione
+- si el frontend ya está preparado para leer contenido dinámico
+- si habría que reemplazar contenido hardcodeado por contenido desde base de datos
+
+Formato de respuesta:
+- organiza por bloques
+- usa nombres de archivos exactos
+- usa nombres de tablas y campos exactos si existen
+- no propongas todavía una solución
+- no modifiques nada
+- si algo no se puede confirmar, dilo claramente
