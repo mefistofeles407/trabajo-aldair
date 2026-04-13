@@ -15,14 +15,19 @@ import { validateImageFile, createPreviewUrl } from '../utils/imageUpload.js'
  */
 /**
  * Valida que una URL sea segura para usar como src de imagen.
- * Acepta blob: (previsualización local) y http/https (PocketBase).
- * @param {string} url
+ * Usa el constructor URL para garantizar que el esquema sea http, https o blob.
+ * @param {string|null} url
  * @returns {string} URL validada o cadena vacía si no es segura
  */
 function sanitizeImageUrl(url) {
-  if (!url) return ''
-  if (url.startsWith('blob:') || url.startsWith('http://') || url.startsWith('https://')) {
-    return url
+  if (!url || typeof url !== 'string') return ''
+  try {
+    const parsed = new URL(url)
+    if (parsed.protocol === 'https:' || parsed.protocol === 'http:' || parsed.protocol === 'blob:') {
+      return parsed.href
+    }
+  } catch {
+    // URL inválida
   }
   return ''
 }
