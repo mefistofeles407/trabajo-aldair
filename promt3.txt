@@ -1,0 +1,65 @@
+Necesito el inventario técnico final del proyecto para poder planificar la implementación del panel de administrador sin asumir nada.
+
+No modifiques archivos. No sugieras cambios todavía. Solo dame un inventario técnico verificable y preciso.
+
+Quiero que me entregues:
+
+1. Lista exacta de archivos que probablemente habrá que editar para implementar el panel admin completo
+Sepáralos por categoría:
+- autenticación
+- panel admin
+- conexión a base de datos
+- frontend público
+- manejo de imágenes
+- estilos
+- scripts
+
+2. Lista exacta de archivos nuevos que harían falta si el sistema actual no los tiene
+Solo si es realmente necesario según la estructura actual.
+Aclara para cada uno:
+- nombre sugerido del archivo
+- propósito técnico
+- por qué haría falta
+
+3. Lista de tablas necesarias o existentes para soportar:
+- usuario administrador único
+- edición de textos
+- edición de imágenes
+- creación de secciones
+- creación de subsecciones
+
+4. Estado de preparación del proyecto
+Clasifica cada área como:
+- ya existe
+- existe parcialmente
+- no existe
+
+Áreas a clasificar:
+- login admin
+- control de sesión
+- dashboard
+- editor de textos
+- editor de imágenes
+- gestión de secciones
+- gestión de subsecciones
+- persistencia en base de datos
+- renderizado dinámico en frontend
+
+5. Obstáculos técnicos concretos
+- limitaciones reales del proyecto actual
+- partes que podrían romperse al volver dinámico el contenido
+- dependencias críticas
+- archivos demasiado acoplados
+- cualquier cosa que deba saberse antes de intervenir
+
+6. Resumen final breve pero técnico
+- qué tipo de proyecto es realmente
+- qué tan difícil será convertirlo en administrable
+- cuál parece ser el camino técnico más lógico según la estructura actual
+
+Formato de respuesta:
+- sé concreto
+- usa información verificable
+- no inventes
+- no propongas aún un plan por pasos
+- no hagas modificaciones
